@@ -1,4 +1,4 @@
-# DTSVM_concept
+# DTSVM_IDS
 Intrusion Detection System using DTSVM classifier.
 
 
