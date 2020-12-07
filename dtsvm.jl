@@ -237,10 +237,9 @@ function buildTree(rawsamples::Samples, gen::Int64, stop::Int64, pop::Int64, sel
 end
 
 function predict(node::Node, labels::Dict, sample)
-	#p = predict(sample, labels, node.svm)
-    (p, _) = svmpredict(node.svm, sample)	#p = 1
+    (p, _) = svmpredict(node.svm, sample)
 	if p[1] == 1
-		if typeof(node.p) == Node
+	       if typeof(node.p) == Node
 			return predict(node.p, labels, sample)
 		else
 			return labels[node.p]
