@@ -16,7 +16,7 @@ It works, although many speed improvements are to look out for.
 
 # How to use:
 
-features = x :: Matrix 2 Float64
+features = x :: Array 2 Float64
 
 labels = y :: Vector Int
 
