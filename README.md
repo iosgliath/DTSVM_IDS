@@ -13,7 +13,7 @@ Using KDD Cup 1999 Data
 
   -> http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html
 
-It works, although many speed improvements are to look out for.
+It works, although many speed improvements are to look out for
 
 # How to use:
 
