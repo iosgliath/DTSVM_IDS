@@ -28,7 +28,9 @@ Initialise our Partition structure containing features and labels
     samples = partitionSamples(convert(Array{Any}, hcat(x, y)))
     
 Build the Decision Tree
+
 buildTree(rawsamples::Samples, gen::Int64, stop::Int64, pop::Int64, sel::Float64, α::Float64, γ::Float64)
+
   GA PARAMETERS:
   - gen = number of generations
   - stop = useless for now but there to stop GA at fitness plateau
