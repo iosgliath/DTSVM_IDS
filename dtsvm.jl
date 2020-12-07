@@ -81,10 +81,6 @@ function initChromosomes(m::Int64, pop::Int64)
     return out
 end
 
-function selection(chromosomes::Vector{Chromosome}, sel::Float64)
-    sort(chromosomes, by = x -> x.fitness, rev = true)[1:floor(Int64, length(chromosomes) * sel)]
-end
-
 function selection!(chromosomes::Vector{Chromosome})
     sort!(chromosomes, by = x -> x.fitness, rev = true)
 end
