@@ -376,35 +376,24 @@ function encodeFeatures(data::Any, nominalidx::Vector{Int})
 		len += length(unique(data[:,nominalidx[k]]))
 		print("\n ", unique(data[:,nominalidx[k]]))
 	end
-	# print("\nlen ", len)
-
-
 
 	onehot = Array{Float64}(undef, nsamples, len)
 
 	for i = 1:size(nom, 1)
-		# print("\nrow ", i)
 		vec = zeros()
-		print("\n")
 		if mod(size(nom, 1), 1000) == 0
 			print("\n => ", i)
 		end
 		for j = 1:size(nom, 2)
 			l = length(unique(nom[:,j]))
-			# print("\nsubl ", l)
-			#bloc = Vector{Float64}(undef, nsamples, l)
-
 			subhot = zeros(Float64, l)
 			subhot[floor(Int, nom[i,j])] = 1.0
 			vec = vcat(vec, subhot)
-
-			#onehot = vcat(onehot, subhot)
 		end
 		onehot[i,:] = vec[2:end]
 	end
 
 	return num, numn, nom, onehot
-	# return num, numn
 end
 
 p(k, in) = parse.(Float64, in[collect(1:size(in,1)), k])
@@ -458,7 +447,7 @@ end
 
 pwd()
 cd()
-cd("Documents/julia/data/cyber/")
+cd("Documents/julia/data/cyber/") # use your own file path
 
 
 data = readdlm("kddcup.data.corrected")
@@ -519,8 +508,10 @@ class3 = sampleFeatures(xx[class3idx,:], 500)
 class4 = sampleFeatures(xx[class4idx,:], 500)
 class5 = sampleFeatures(xx[class5idx,:], 500)
 
-#x = vcat(steardrop, snmap,  steardrop, ssatanix, sbufferoverflow)
 
+"""
+CORE
+"""
 x = vcat(snormal, class2, class3, class4, class5)
 y = vcat(fill(1, 500), fill(2, 500), fill(3, 500), fill(4, 500), fill(5, 500))
 samples = partitionSamples(convert(Array{Any}, hcat(x, y)))
