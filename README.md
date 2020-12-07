@@ -35,9 +35,9 @@ buildTree(rawsamples::Samples, gen::Int64, stop::Int64, pop::Int64, sel::Float64
   - gen = number of generations
   - stop = useless for now but there to stop GA at fitness plateau
   - pop = number of chromosomes
-  - sel = selection ration at each generation
-  - α = allele selection ratio for mutation
-  - γ = mutation strengh ratio
+  - sel = chromosome selection ration at each generation (for breeding)
+  - α = allele selection ratio (for mutation)
+  - γ = mutation strengh
   
          tree = buildTree(samples, 30, 10, 10, 0.4, 0.2, 0.25)
       
