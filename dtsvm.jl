@@ -204,6 +204,7 @@ function initSplit(rawsamples::Samples, id::Int64, xks::Vector{Xk}, gen::Int64, 
 	length(cnidx) == 1  && (isLeafOut = 0; n = rawsamples.partitions[cnidx[1]].id)
 
     (instances, labels) = buildSVMTrainingSet(rawsamples, cpidx, cnidx)
+    # lazy train - test split
     model = svmtrain(instances[:, 1:2:end], labels[1:2:end])
 
 	return Node(id, isLeafOut, cpidx, cnidx, p, n, model)
