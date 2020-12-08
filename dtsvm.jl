@@ -2,16 +2,28 @@ using DataFrames, Combinatorics, LinearAlgebra, Distributions, Random, StatsBase
 
 
 mutable struct Xk
+	"""
+	Xk stores all the samples corresponding to one class in x and their corresponding numerical class in id
+	Xk.id is set up while partining our samples, where each nominal label is attributed a numerical id, stored in Samples.labels as a dictionnary
+	"""
     id::Int64
     x::Array{Float64, 2}
 end
 
 mutable struct Samples
+	"""
+	Samples stores all our data in partitions, as a Vector of Xk structs
+	Labels is a dictionnary where nominal labels = numerical one
+	"""
     partitions::Vector{Xk}
     labels::Dict
 end
 
 mutable struct Chromosome
+	"""
+	An individual in our GA process
+	alleles :: Vector of 0 and 1 = one hot encoding Xp and Xn classes (the ones that have their clustering center the most differiated)
+	"""
     alleles::Vector{Int}
     fitness::Float64
 end
