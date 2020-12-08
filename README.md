@@ -23,6 +23,8 @@ It works, although many speed improvements are to look out for (on top of hyperp
 Decision tree and GA are implemented from scratch.
 SVM part is using LIBSVM.jl (was not the focus of this project, you can look out my svm repo to look out for a SVM SMO implmentation)
 
+Any feedback welcome!
+
 # How to use:
 
 features = x :: Array 2 Float64
