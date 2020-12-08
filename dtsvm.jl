@@ -13,7 +13,7 @@ end
 mutable struct Samples
 	"""
 	Samples stores all our data in partitions, as a Vector of Xk structs
-	Labels is a dictionnary where nominal labels = numerical one
+	Labels is a dictionnary where nominal labels = numerical ones
 	"""
     partitions::Vector{Xk}
     labels::Dict
