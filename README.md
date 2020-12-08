@@ -5,7 +5,7 @@
 
 Builds a decision tree containing binary SVM classifiers at each inner node, with a genetic algorithm to optimise node segmentation.
 
-The intuition is that we want to separate our dataset at each nodes with the right combination of classes (the one that maximise the euclidan distance between the feqtures of the two classes combinations) => it gives more "room" for our binary SVM to draw support vectors later on. 
+The intuition is that we want to separate our dataset at each nodes with the right combination of classes (the one that maximise the euclidan distance between the features of the two classes combinations) => it gives more "room" for our binary SVM to draw support vectors later on. 
 
 Genetic Algorithm is used at each node to try find the best solution possible to this combination problem (distribute all classes from node into two subsets Xp and Xn). Binary SVM is then trained on this subdataset. If Xp or Xn are only one class, we got a leaf node, else, an inner node.
 Tree is built, with (m) leaf nodes and (m-1) inner nodes (m = number of classes in our dataset).
