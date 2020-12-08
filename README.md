@@ -5,6 +5,8 @@
 
 Builds a decision tree containing binary SVM classifiers at each inner node, with a genetic algorithm to optimise node segmentation.
 
+The intuition is that we want to separate our dataset at each nodes with the right combination of classes (the one that maximise the euclidan distance between the two combination of subclasses) => it gves more "room" for our binary SVM to draw support vectors. 
+
 Followed this publication for model architecture
 
   -> https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6077641
