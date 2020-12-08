@@ -390,8 +390,8 @@ function encodeFeatures(data::Any, nominalidx::Vector{Int})
 
 	for i = 1:size(nom, 1)
 		vec = zeros()
-		if mod(size(nom, 1), 1000) == 0
-			print("\n => ", i)
+		if mod(size(i, 1), 1000) == 0
+			print("\n=> $i K processed")
 		end
 		for j = 1:size(nom, 2)
 			l = length(unique(nom[:,j]))
