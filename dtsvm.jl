@@ -525,5 +525,5 @@ x = vcat(snormal, class2, class3, class4, class5)
 y = vcat(fill(1, 500), fill(2, 500), fill(3, 500), fill(4, 500), fill(5, 500))
 samples = partitionSamples(convert(Array{Any}, hcat(x, y)))
 tree = buildTree(samples, 30, 10, 10, 0.4, 0.2, 0.25)
-prediction = predict(tree, samples.labels, x'[:,1502:1502])
-labels[1502]
+prediction = predict(tree, samples.labels, x'[:,1501:1501]) #we lazy splitted train - test respectively to [1:2:end] - [2:2:end]
+labels[1501]
