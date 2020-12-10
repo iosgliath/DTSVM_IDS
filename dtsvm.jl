@@ -45,7 +45,7 @@ mutable struct Node
 	cnidx::Vector{Int64} # labels in Xn, if unique, leafOutput = 0
 	p::Union{Node, Int64} # node || unique label: if result of svm is p, pred is Int64 in samples dict
 	n::Union{Node, Int64} # node || unique label: if result of svm is n, pred is Int64 in samples dict
-	svm::Union{BinaryModel, LIBSVM.SVM{Int64}, Int64}
+	svm::Union{LIBSVM.SVM{Int64}, Int64}
 end
 
 
