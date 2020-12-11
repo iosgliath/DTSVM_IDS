@@ -55,4 +55,4 @@ buildTree(rawsamples::Samples, gen::Int64, stop::Int64, pop::Int64, sel::Float64
 Generate prediction on sample
 
       prediction = predict(tree, samples.labels, x'[:,1502:1502])
-      labels[1502] # check prediction
+      y[1502] # check prediction
