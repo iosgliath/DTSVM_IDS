@@ -20,7 +20,7 @@ Using KDD Cup 1999 Data
 
 It works, although many speed improvements are to look out for (on top of hyperparameter tuning).
 
-Decision tree and GA are implemented from scratch.
+Decision tree and GA are implemented.
 SVM part is using LIBSVM.jl (was not the focus of this project, you can look out my svm repo to look out for a SVM SMO implmentation)
 
 Any feedback welcome!
